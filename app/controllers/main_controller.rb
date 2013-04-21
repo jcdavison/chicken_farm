@@ -5,10 +5,14 @@ class MainController < ApplicationController
   
   def test
     # Array of the last 10 (value, datetime) for each sensor
-    @inputs1 = Sensor.find(1).inputs.take(5)
-    @data1 = [ [Date.today.to_time.to_i , 1], [Date.today.to_time.to_i + 2, 5] ]
-    if @inputs1 != []
-      @inputs.each do |input|
+    @inputs1 = Input.find_all_by_sensor_id(1)
+    # @data1 = [ [Date.today.to_time.to_i , 1], [Date.today.to_time.to_i + 2, 5] ]
+    @data1 = []
+
+    puts @inputs1
+
+    if @inputs1 != nil and @inputs1.empty? == false
+      @inputs1.each do |input|
         @data1.push [input.created_at.to_time.to_i, input.value]
       end
     end
