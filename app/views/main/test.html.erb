@@ -7,25 +7,24 @@
 	$(function() {
 		new Highcharts.Chart({
 			chart: {
-				renderTo: "orders_chart"
+				renderTo: "chicken_chart"
 			},
 			title: {
-				text: "Orders by Day"
+				text: "Chicken Sensor"
 			},
 			xAxis: {
 				type: "datetime"
 			},
 			yAxis: {
 				title: {
-					text: "Dollars"
+					text: "Value"
 				}
 			},
 			series: [{
-				// pointInterval: <%= 1.day * 1000 %>
-				// pointStart: <%= 3.week.ago.to_i * 1000 %>
-				data: <%= @inputs1 %>
+				name: "Sensor 1",
+				data: <%= @data1 %>
 			}]			
 		});		
 	});
 </script>
-<div id="orders_chart" style="width:560px; height:300px;"></div>
+<div id="chicken_chart" style="width:560px; height:300px;"></div>
