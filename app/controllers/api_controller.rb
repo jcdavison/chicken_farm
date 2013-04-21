@@ -9,6 +9,9 @@ class ApiController < ApplicationController
             res = Net::HTTP.get_response(get_url)
             j = JSON.parse(res.body)
 
+            puts "STATUS ***********************************"
+            puts j['status']
+
             if j['status'] == 403
                 puts "yo"
                 render :status => 403, :json => {'message' => 'at least one of the sensors are offline'} and return
