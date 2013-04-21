@@ -1,5 +1,7 @@
 class ApiController < ApplicationController
   def get_all_data
+    state = 'NONE'
+
     @farms = Farm.all
     @farms.each do |farm|
         @sensors = Sensor.find_all_by_farm_id farm.id
@@ -9,6 +11,9 @@ class ApiController < ApplicationController
             res = Net::HTTP.get_response(get_url)
             j = JSON.parse(res.body)
 
+            puts "STATUS ***********************************"
+            puts j['status']
+
             if j['status'] == 403
                 puts "yo"
                 render :status => 403, :json => {'message' => 'at least one of the sensors are offline'} and return
@@ -16,12 +21,16 @@ class ApiController < ApplicationController
                 i = Input.new
                 i.sensor_id = sensor.id
                 i.value = j['response']['values'][0]
-                i.save 
+                i.save ? state = 'SAVED' : nil
             end
         end
     end
 
-    render :status => 200, :json => {'message' => 'all data retrieved'}
+    if state == 'SAVED'
+        render :status => 200, :json => {'message' => 'all data retrieved'} and return
+    else
+        render :status => 500, :json => {'message' => 'data fail'} and return
+    end
   end
 
   def status
