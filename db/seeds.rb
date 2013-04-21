@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# ('a'..'f').each do |e|
+  # Farm.create(name: 'Team '+ e, tele_id: (10000 + e.ord).to_s)
+#   
+# end
+
+
+
