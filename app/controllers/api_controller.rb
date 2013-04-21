@@ -22,9 +22,9 @@ class ApiController < ApplicationController
                 i.sensor_id = sensor.id
                 sensor_value = j['response']['values'][0]
 
-                if sensor.id == 2
+                if sensor.pin_number == 2
                     i.value = sensor_value
-                elsif sensor.id == 3
+                elsif sensor.pin_number == 3
                     sensor_value == 0 ? i.value = 1 : i.value = 0
                 end
 
