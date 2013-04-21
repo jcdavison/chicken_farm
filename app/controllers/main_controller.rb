@@ -1,9 +1,5 @@
 class MainController < ApplicationController
   def index
-
-  end
-  
-  def test
     # Array of the last 10 (value, datetime) for each sensor
     @inputs1 = Input.find_all_by_sensor_id(1)
     # @data1 = [ [Date.today.to_time.to_i , 1], [Date.today.to_time.to_i + 2, 5] ]
