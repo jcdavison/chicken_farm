@@ -20,7 +20,14 @@ class ApiController < ApplicationController
             elsif j['status'] == 200
                 i = Input.new
                 i.sensor_id = sensor.id
-                i.value = j['response']['values'][0]
+                sensor_value = j['response']['values'][0]
+
+                if sensor.id == 2
+                    i.value = sensor_value
+                elsif sensor.id == 3
+                    sensor_value == 0 ? i.value = 1 : i.value = 0
+                end
+
                 i.save ? state = 'SAVED' : nil
             end
         end
