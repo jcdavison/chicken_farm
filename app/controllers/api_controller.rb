@@ -9,11 +9,24 @@ class ApiController < ApplicationController
             res = Net::HTTP.get_response(get_url)
             j = JSON.parse(res.body)
 
-            i = Input.new
-            i.sensor_id = sensor.id
-            i.value = j['response']['values'][0]
-            i.save 
+            if j['status'] == 403
+                puts "yo"
+                render :status => 403, :json => {'message' => 'at least one of the sensors are offline'} and return
+            elsif j['status'] == 200
+                i = Input.new
+                i.sensor_id = sensor.id
+                i.value = j['response']['values'][0]
+                i.save 
+            end
         end
     end
+
+    render :status => 200, :json => {'message' => 'all data retrieved'}
   end
+
+  def status
+    render :status => 200, :json => {'message' => 'api is up and running'}
+  end
+
+
 end
