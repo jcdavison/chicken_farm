@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" a href="stylesheet.css" />
+<script type="text/javascript" src="chickens.js"></script>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script type="text/javascript" src="d3/d3.v3.js"></script>
+
+</head>
+<body>
+<header>
+  <h1>Chickens</h1>
+  <nav>
+    <ul>
+      <li><a href="#about" class="roll"><span data-title="About">About</span></a></li>
+      <li><a href="#data_map" class="roll"><span data-title="Data Map">Data Map</span></a></li>
+      <li><a href="#setup" class="roll"><span data-title="SetUp">SetUp</span></a></li>
+    </ul>
+  </nav>
+</header>
+<div id="page_wrapper">
+
+<div id="about"> 
+	<div class="content">
+    	
+	</div>
+</div>
+<div id="data_map">
+<div class="content">
+</div>
+</div>
+<div id="setup"> <a id="setup"></a> 
+<div class="content">kslghalsdhfl;asjdfl;kajsdf</div>
+</div>
+
+</div>
+<footer></footer>
+<!------------------- smooth scroll -------------> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> 
+<script>$(document).ready(function() {
+  function filterPath(string) {
+    return string
+      .replace(/^\//,'')  
+      .replace(/(index|default).[a-zA-Z]{3,4}$/,'')  
+      .replace(/\/$/,'');
+  }
+  $('a[href*=#]').each(function() {
+    if ( filterPath(location.pathname) == filterPath(this.pathname)
+    && location.hostname == this.hostname
+    && this.hash.replace(/#/,'') ) {
+      var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+      var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+       if ($target) {
+         var targetOffset = $target.offset().top;
+         $(this).click(function() {
+           $('html, body').animate({scrollTop: targetOffset}, 1000);
+           return false;
+         });
+      }
+    }
+  });
+});</script> 
+
+<!----------------------------------------------->
+</body>
+</html>

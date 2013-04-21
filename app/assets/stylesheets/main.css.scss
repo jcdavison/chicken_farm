@@ -1,0 +1,188 @@
+@charset "UTF-8";
+/* CSS Document */
+/* reset css */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+/****************************/
+
+html {
+	margin: 0;
+	padding: 0;
+	background:url(struckaxiom/struckaxiom.png);
+}
+body {
+	margin: 0;
+	padding: 20px;
+	width: 960px;
+	margin: auto;
+
+}
+
+header {
+	position:fixed;
+	height:140px; 
+	width:100%;
+	background-color:#000;
+	top:0;
+	left:0;
+	z-index:11;
+}
+
+header h1 {
+	margin:auto;
+	font-family: Sertig;
+	font-size:85px;
+	color:#fff;
+	text-shadow: 0px 4px 3px rgba(255,255,255,0.4),
+             0px 8px 13px rgba(255,255,255,0.1),
+             0px 18px 23px rgba(255,255,255,0.1);
+	float:left;
+	padding:30px 20px 0px 30px;
+}
+
+nav {
+	float:left;
+	margin-top:75px;
+}
+
+nav ul li {
+	display:inline;
+	margin:10px;
+}
+
+/********* 3d nav links *********/
+a {
+	font-family:Sertig;
+	font-size:25px;
+	font-weight:bold;
+	color: #666;
+    text-decoration: none;
+	padding:0px;
+}
+    
+a:hover {
+    color: black;
+    background: #000;
+    text-shadow: none;
+    border: none;
+    border-radius: 2px;
+
+}
+
+.roll {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+	padding:6px;
+
+    -webkit-perspective: 300px;
+       -moz-perspective: 300px;
+        -ms-perspective: 300px;
+            perspective: 300px;
+
+    -webkit-perspective-origin: 50% 50%;
+       -moz-perspective-origin: 50% 50%;
+        -ms-perspective-origin: 50% 50%;
+            perspective-origin: 50% 50%;
+}
+.roll:hover {
+    background: none;
+    text-shadow: none;
+}
+.roll span {
+    display: block;
+    position: relative;
+    padding: 4px;
+    pointer-events: none;
+
+    -webkit-transition: all 600ms ease;
+       -moz-transition: all 400ms ease;
+        -ms-transition: all 400ms ease;
+            transition: all 400ms ease;
+    
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+        -ms-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+.roll:hover span {
+    background: rgba(1, 70, 105, .9);
+    -webkit-transform: translate3d( 0px, 0px, -45px ) rotateX( 90deg );
+       -moz-transform: translate3d( 0px, 0px, -45px ) rotateX( 90deg );
+        -ms-transform: translate3d( 0px, 0px, -45px ) rotateX( 90deg );
+            transform: translate3d( 0px, 0px, -45px ) rotateX( 90deg );
+}
+.roll span:after {
+    content: attr(data-title);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 8px;
+    white-space: nowrap;
+
+    color: white;
+    background: #069; 
+
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+        -ms-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+
+    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+       -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+        -ms-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+            transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+}
+/*******************************/
+#page_wrapper {
+	margin:0;
+	padding:0;
+	-webkit-box-shadow: 7px 0px 22px rgba(0, 0, 0, 0.88), -7px 0px 22px rgba(0, 0, 0, 0.88);
+	-moz-box-shadow:    7px 0px 22px rgba(0, 0, 0, 0.88), -7px 0px 22px rgba(0, 0, 0, 0.88);
+	box-shadow:         7px 0px 22px rgba(0, 0, 0, 0.88), -7px 0px 22px rgba(0, 0, 0, 0.88);
+}
+#about {
+	padding:180px 20px 30px 20px;
+	background: url(farming-organicfarm-california-1270323-o.jpg) no-repeat ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-attachment:fixed;
+	background-color:#000;
+	height:700px;
+	color:#fff;
+}
+
+#data_map {
+	padding-top:180px;
+	background-color:#333;
+	height:700px;
+	color:#fff;
+	
+}
+
+#setup {
+	padding-top:180px;
+	background-color:#777;
+	height:700px;
+}
+
+.content {
+	background-color: rgba(0, 0, 0, 0.8);
+	width:800px;
+	margin:auto;
+	padding:30px;
+	border-radius:10px;
+	color:#fff;
+}
+
