@@ -26,6 +26,7 @@ group :assets do
 end
 
 gem 'rubyweather'
+#gem 'highcharts-js-rails', :git => 'git://github.com/agrobbin/highcharts-js-rails.git'
 
 gem 'jquery-rails'
 
