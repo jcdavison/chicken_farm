@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421003306) do
+ActiveRecord::Schema.define(:version => 20130421012153) do
 
   create_table "farms", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130421003306) do
     t.integer  "farm_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "pin_number"
   end
 
 end
